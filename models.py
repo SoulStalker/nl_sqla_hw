@@ -69,6 +69,9 @@ class Sale(Base):
     Stock = relationship(Stock, backref='sale')
 
 
-if __name__ == '__main__':
+def create_db():
+    # if __name__ == '__main__':
     Base.metadata.drop_all(db_engine)
     Base.metadata.create_all(db_engine)
+
+
