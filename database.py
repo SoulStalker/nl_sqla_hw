@@ -17,6 +17,6 @@ with open('dsn.txt', encoding='utf-8') as dsn_file:
     # у меня внешний сервер поэтому dsn не передаю в гит
     dsn = dsn_file.read()
 
-db, engine = create_session(dsn)
+db, db_engine = create_session(dsn)
 
 
