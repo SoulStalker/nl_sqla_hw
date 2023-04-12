@@ -5,9 +5,9 @@ from models import Publisher, Book, Stock, Shop
 def get_shops(publisher):
     shops = db.query(Shop).join(Stock).join(Book).join(Publisher)
     if publisher.isdigit():
-        shops.filter(Publisher.id == publisher).all()
+        shops = shops.filter(Publisher.id == publisher).all()
     else:
-        shops.filter(Publisher.name == publisher).all()
+        shops = shops.filter(Publisher.name == publisher).all()
     res_list = []
     for shop in shops:
         res_list.append(shop.name)
