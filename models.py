@@ -70,8 +70,9 @@ class Sale(Base):
 
 
 def create_db():
-    # if __name__ == '__main__':
     Base.metadata.drop_all(db_engine)
     Base.metadata.create_all(db_engine)
 
 
+if __name__ == '__main__':
+    create_db()
